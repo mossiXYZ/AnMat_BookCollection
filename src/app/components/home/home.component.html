@@ -1,3 +1,53 @@
-<div class="example-button-row">
-  <button mat-button>Basic</button>
+
+<div >
+    <h1>Favorite Books :</h1>
 </div>
+<mat-grid-list cols="5" rowHeight="600px">
+    <mat-grid-tile
+        *ngFor="let book of favoriteBooks ">
+        <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title>{{book.title}}</mat-card-title>
+              <mat-card-subtitle>written by:  {{book.author}}</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src= {{book.imageUrl}} alt="{{book.title}}">
+            <mat-card-content>
+
+            </mat-card-content>
+            <mat-card-actions>
+                <div class="example-button-row">
+                    <button mat-button mat-raised-button [routerLink]="['/book/'+book.$key]" class="detailsButton" >Book Details</button>
+                    <button mat-button  mat-raised-button [routerLink]="['/edit-book/'+book.$key]" class="editButton" >Edit Book</button>
+                  </div>    
+            </mat-card-actions>
+          </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>
+<br><br>
+<hr>
+
+<div >
+    <h1>UnRead Books :</h1>
+</div>
+
+<mat-grid-list cols="5" rowHeight="600px">
+    <mat-grid-tile
+        *ngFor="let book of unReadBooks ">
+        <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title>{{book.title}}</mat-card-title>
+              <mat-card-subtitle>written by:  {{book.author}}</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src= {{book.imageUrl}} alt="{{book.title}}">
+            <mat-card-content>
+
+            </mat-card-content>
+            <mat-card-actions>
+                <div class="example-button-row">
+                    <button mat-button basic [routerLink]="['/book/'+book.$key]" class="detailsButton" >Book Details</button>
+                    <button mat-button  mat-raised-button [routerLink]="['/edit-book/'+book.$key]" class="editButton" >Edit Book</button>
+                  </div>      
+            </mat-card-actions>
+          </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>

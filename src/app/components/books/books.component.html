@@ -1,5 +1,29 @@
-<div>
-  <ul>
-    <li *ngFor= "let book of allBooks "> Book title :  {{book.title}}</li>
-  </ul> 
+
+<div >
+    <h1>ALl Books :</h1>
 </div>
+
+<mat-grid-list cols="5" rowHeight="500px">
+    <mat-grid-tile
+        *ngFor="let book of allBooks ">
+        <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title>{{book.title}}</mat-card-title>
+              <mat-card-subtitle>written by:  {{book.author}}</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src= {{book.imageUrl}} alt="{{book.title}}">
+            <mat-card-content>
+
+            </mat-card-content>
+            <mat-card-actions>
+            <div class="example-button-row">
+
+              <button mat-button basic [routerLink]="['/book/'+book.$key]" class="detailsButton" >Book Details</button>
+              <button mat-button  mat-raised-button [routerLink]="['/edit-book/'+book.$key]" class="editButton" >Edit Book</button>
+            </div>
+
+            </mat-card-actions>
+
+          </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>

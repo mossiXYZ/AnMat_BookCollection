@@ -8,12 +8,12 @@ td{ padding-right: 50px; }
 .half-width { width: 50%; }
 .third-width{ width: 75%; }
 .quarter-width{ width: 25%; }
-
-md-grid-tile{
-    box-shadow: 10px 10px 5px #888888;
+/*
+mat-grid-tile{
+    box-shadow: 7px 7px 3px #888888;
     margin: 1em auto;
 }
-
+*/
 .full-heigth {
     height: -moz-calc(100% - 64px); 
     height: -webkit-calc(100% - 64px); 

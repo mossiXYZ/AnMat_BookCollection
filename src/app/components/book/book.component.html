@@ -1,3 +1,46 @@
-<p>
-  book works!
-</p>
+
+<div >
+    <h1>Book Details :</h1>
+</div>
+
+
+<div class="details-book" >
+    <mat-card class="example-card">
+
+        <mat-card-header>
+          <mat-card-title>{{title}}</mat-card-title>
+        </mat-card-header>
+
+
+
+        <mat-card-content>
+            <div class="left">
+                <img mat-card-image src="{{imageUrl}}" alt="{{title}}">
+            </div>
+
+            <div class="right">
+              <mat-list>
+                      <mat-list-item>  Author:&nbsp;&nbsp;<b> {{author}}</b> </mat-list-item>
+                      <mat-list-item>  Date Added:&nbsp;&nbsp;<b> {{dateadded}}</b> </mat-list-item>
+                      <mat-list-item *ngIf="dateread"> <i class="material-icons">date_range</i> Date Read:&nbsp;&nbsp;<b> {{dateread}}</b> </mat-list-item>
+                      <mat-list-item>  Price:&nbsp;&nbsp;<b> {{price}}</b></mat-list-item>
+                      <mat-list-item *ngIf="rate">  Rate:&nbsp;&nbsp;<b>{{rate}}</b></mat-list-item>
+              </mat-list>
+            </div>
+            <mat-toolbar>Description</mat-toolbar>
+            {{description}}
+            <p *ngIf="!description"> No description for this book! </p>
+
+        </mat-card-content>
+
+
+        <mat-card-actions>
+          <div class="example-button-row">
+            <button [routerLink]="['/books']" mat-raised-button>  All Books </button>
+            <button [routerLink]="['/edit-book/'+id]"  mat-raised-button class="editButton">  Edit </button> 
+            <button [routerLink]="['/delete-book/'+id]" mat-raised-button color="warn"> Delete </button>
+          </div>
+        </mat-card-actions>
+
+      </mat-card>
+</div>
