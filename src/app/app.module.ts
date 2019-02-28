@@ -13,6 +13,12 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MaterialModule } from './material/material.module';
 
+//firebase configuration
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +33,8 @@ import { MaterialModule } from './material/material.module';
   ],
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule,
     AppRoutingModule,
     MaterialModule
   ],
