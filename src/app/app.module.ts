@@ -15,8 +15,9 @@ import { MaterialModule } from './material/material.module';
 
 //firebase configuration
 import { AngularFireModule } from '@angular/fire';
-import { environment } from '../environments/environment';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { environment } from '../environments/environment';
+import { BooksService } from './services/books.service';
 
 
 @NgModule({
@@ -38,7 +39,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
     AppRoutingModule,
     MaterialModule
   ],
-  providers: [],
+  providers: [BooksService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
