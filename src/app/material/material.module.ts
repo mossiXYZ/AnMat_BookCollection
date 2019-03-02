@@ -13,7 +13,7 @@ import * as Material from '@angular/material';
     Material.MatGridListModule,
     Material.MatInputModule,
     Material.MatDatepickerModule,
-    //MdNativeDateModule
+    Material.MatNativeDateModule ,
     Material.MatToolbarModule,
     Material.MatProgressSpinnerModule,
     Material.MatTabsModule,
@@ -27,7 +27,7 @@ import * as Material from '@angular/material';
     Material.MatGridListModule,
     Material.MatInputModule,
     Material.MatDatepickerModule,
-    //MdNativeDateModule
+    Material.MatNativeDateModule ,
     Material.MatToolbarModule,
     Material.MatProgressSpinnerModule,
     Material.MatTabsModule,

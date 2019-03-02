@@ -29,4 +29,9 @@ export class BooksService {
     return this.bookDetail.snapshotChanges();
   } 
 
+  addBook(bookDetails){
+    var filteredBook = JSON.parse(JSON.stringify(bookDetails)); //removes the undefined fields
+    console.log('Filtered Book - ',filteredBook);
+    return this.bookList.push(filteredBook);
+  }
 }
